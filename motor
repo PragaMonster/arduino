@@ -1,0 +1,18 @@
+//definindo os pinos A0 (potenciometro) e A9(motor) 
+
+#define portPin 0
+#define motorPin 9
+
+//variavel que vai guardar o valor do potenciomentro
+
+int valPot = 0;
+
+void setup(){
+	pinMode (motorPin,OUTPUT);
+}
+
+void loop(){
+	valPot = analogRead(portPin);
+  	valPot = map(valPot,0,1023,0,255);
+  	analogWrite(motorPin,valPot);
+}
